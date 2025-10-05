@@ -1,1 +1,1 @@
-# Quant-Challenge
+# Causal Inference Trading System
