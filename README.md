@@ -79,14 +79,8 @@ algo-trading-quant-project/
 ├── papers/                            # Literature and references
 ├── data/                              # Market data storage
 ├── results/                           # Model outputs, pickles, visualizations
-├── causal_trading_demo.py             # Basic demo (working)
 ├── advanced_causal_demo.py            # Research-grade demo (SOTA)
-├── verify_gpu.py                      # GPU verification script
 ├── requirements.txt                   # Python dependencies
-├── SOTA_COMPARISON.md                 # Why 56-58% is excellent
-├── OPTUNA_COMPARISON.md               # Optuna vs Grid Search
-├── GPU_8GB_OPTIMIZATIONS.md           # RTX 4070 optimizations
-├── PAPER_ROADMAP.md                   # 3-week publication timeline
 └── README.md                          # This file
 ```
 
