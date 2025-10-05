@@ -363,30 +363,7 @@ Generated automatically:
 - **Causal Graphs**: NetworkX/Graphviz visualization
 - **Performance Plots**: Returns, drawdowns, Sharpe over time
 - **Heterogeneous Effects**: Treatment effect distributions by regime
-
-## � **Research & Publications**
-
-### 3-Week Conference Paper Timeline
-
-See `PAPER_ROADMAP.md` for complete schedule:
-
-**Week 1 (Current):**
-- ✅ GPU setup + Optuna installation
-- ✅ Feature engineering (64 features)
-- 🔄 TCN/Transformer optimization
-- 🔄 Ensemble creation
-
-**Week 2:**
-- Deep causal networks
-- Advanced heterogeneous effects analysis
-- Statistical significance testing
-- Ablation studies
-
-**Week 3:**
-- Paper writing (8-10 pages)
-- Comprehensive experiments (5 stocks)
-- Publication-quality figures
-- Submit to NeurIPS/ICML/KDD
+- 
 
 ### Target Conferences
 
@@ -438,9 +415,9 @@ If you use this code in your research, please cite:
 ```bibtex
 @software{causal_trading_dl_2025,
   title={Advanced Causal Inference Trading System with Deep Learning},
-  author={Your Name},
+  author={Harshit Kumar},
   year={2025},
-  url={https://github.com/yourusername/algo-trading-quant-project},
+  url={https://github.com/HarshitK2814/algo-trading-quant-project},
   note={Achieves 56-58\% accuracy with heterogeneous causal effects analysis}
 }
 ```
@@ -477,11 +454,6 @@ MIT License - see LICENSE file for details.
 - Athey & Wager (2019) - Causal Forest
 - Chernozhukov et al. (2018) - Double Machine Learning
 
-## 📞 **Support**
-
-- **Issues**: Open an issue on GitHub
-- **Discussions**: Use GitHub Discussions for questions
-- **Email**: [your-email]
 
 ## ⚠️ **Disclaimer**
 
@@ -508,9 +480,6 @@ MIT License - see LICENSE file for details.
 - [ ] Run advanced demo (`python advanced_causal_demo.py`)
 - [ ] Start Optuna optimization (see Quick Start)
 - [ ] Achieve 56-58% accuracy!
-- [ ] Write your paper!
-
-**Ready to achieve publication-grade results? Let's go! 🎯**
 
 ---
 
