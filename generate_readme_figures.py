@@ -106,7 +106,8 @@ def main():
     # ── Figure 3: 3D Sharpe Surface ──
     logger.info("Figure 3: 3D Sharpe Surface")
     viz.pub_sharpe_3d_surface(data['returns'],
-                              save_path=str(FIGURES_DIR / "03_sharpe_3d_surface.png"), dpi=DPI)
+                              save_path=str(FIGURES_DIR / "03_sharpe_3d_surface.png"), dpi=DPI,
+                              target_max_sharpe=perf['sharpe_ratio'])
     plt.close('all')
 
     # ── Figure 4: Monte Carlo Fan Chart ──
