@@ -1,6 +1,21 @@
-# Advanced Causal Inference Trading System with Deep Learning
+<div align="center">
 
-A **state-of-the-art** algorithmic trading system combining causal inference, deep learning, and uncertainty quantification for publication-grade research. Achieves **56-58% prediction accuracy** (matching NeurIPS/ICML baselines) with **Sharpe ratios of 1.5-2.0**.
+# 🧠 Advanced Causal Inference Trading System
+### Deep Learning • Uncertainty Quantification • Causal Forest
+
+[![Python 3.12](https://img.shields.io/badge/Python-3.12%2B-blue.svg)](https://www.python.org/)
+[![PyTorch 2.8](https://img.shields.io/badge/PyTorch-2.8%2Bcu128-EE4C2C.svg)](https://pytorch.org/)
+[![Optuna](https://img.shields.io/badge/Optuna-Optimization-blueviolet)](https://optuna.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Status: Research-Ready](https://img.shields.io/badge/Status-Research%20Grade-success)](#)
+
+<img src="results/figures/03_sharpe_3d_surface.png" width="80%" alt="3D Sharpe Surface Parameter Optimization">
+
+*A **state-of-the-art** algorithmic trading framework combining causal inference, deep learning, and robust uncertainty quantification for publication-grade quantitative research. Achieves **56-58% prediction accuracy** (matching NeurIPS/ICML baselines) with highly credible **Sharpe ratios of ~1.3 - 1.5** after transaction costs.*
+
+</div>
+
+---
 
 ## 🎯 **Novel Contributions**
 
@@ -353,30 +368,40 @@ See `SOTA_COMPARISON.md` for detailed explanation:
 - 90% accuracy = impossible or data leakage
 - **Sharpe ratio > 1.5** is the real benchmark
 
-## 📈 **Visualization**
+## 📈 **Visualization & Research Assets**
 
 The following publication-grade figures are generated automatically by the pipeline to validate strategy performance, parameter robustness, and statistical significance.
 
+<div align="center">
+
 ### 1. Strategy Performance (Returns & Drawdown)
-![Strategy Equity Curve](results/figures/01_equity_drawdown.png)
+<img src="results/figures/01_equity_drawdown.png" width="85%" alt="Strategy Equity Curve">
+<br><br>
 
 ### 2. Rolling Sharpe Ratio Heatmap
-![Rolling Sharpe](results/figures/02_rolling_sharpe_heatmap.png)
+<img src="results/figures/02_rolling_sharpe_heatmap.png" width="85%" alt="Rolling Sharpe Heatmap">
+<br><br>
 
 ### 3. Parameter Sensitivity (3D Surface)
-![3D Sharpe Surface](results/figures/03_sharpe_3d_surface.png)
+<img src="results/figures/03_sharpe_3d_surface.png" width="70%" alt="3D Sharpe Surface">
+<br><br>
 
 ### 4. Monte Carlo Fan Chart (10,000 GBM Paths)
-![Monte Carlo](results/figures/04_monte_carlo_fan.png)
+<img src="results/figures/04_monte_carlo_fan.png" width="85%" alt="Monte Carlo Fan Chart">
+<br><br>
 
 ### 5. Return Distribution & Tail Risk (VaR/CVaR)
-![Return Distribution](results/figures/05_return_distribution.png)
+<img src="results/figures/05_return_distribution.png" width="85%" alt="Return Distribution">
+<br><br>
 
 ### 6. Fama-French 3-Factor Attribution
-![Fama French](results/figures/06_fama_french.png)
+<img src="results/figures/06_fama_french.png" width="60%" alt="Fama French Attribution">
+<br><br>
 
 ### 7. Static 3D Monte Carlo Paths
-![3D Monte Carlo Paths](results/figures/07_mc_3d.png)
+<img src="results/figures/07_mc_3d.png" width="85%" alt="3D Monte Carlo Paths">
+
+</div>
 
 ### Target Conferences
 
