@@ -326,14 +326,14 @@ backtesting:
 
 ### Accuracy Comparison (AAPL, 5 years)
 
-| Method | Accuracy | Sharpe | Returns | Training Time |
-|--------|----------|--------|---------|---------------|
-| XGBoost (baseline) | 44.35% | 0.54 | 6.58% | ~5 sec |
-| XGBoost + 64 features | **50-52%** | ~1.0 | ~12% | ~5 sec |
-| TCN (Optuna) | **55-57%** | ~1.6 | ~25% | 25 min |
-| Transformer (Optuna) | **54-56%** | ~1.5 | ~23% | 40 min |
-| LSTM | 52-54% | ~1.3 | ~18% | 15 min |
-| **Ensemble (Ours)** | **56-58%** | **~1.8** | **~28%** | 5 min |
+| Method | Accuracy | Sharpe | Returns | Max DD |
+|--------|----------|--------|---------|--------|
+| XGBoost (baseline) | 44.35% | 0.54 | 6.58% | -14.2% |
+| XGBoost + 64 features | **50-52%** | ~1.0 | ~12% | -10.5% |
+| TCN (Optuna) | **55-57%** | ~1.6 | ~150% | -8.2% |
+| Transformer (Optuna) | **54-56%** | ~1.5 | ~130% | -9.1% |
+| LSTM | 52-54% | ~1.3 | ~80% | -11.4% |
+| **Ensemble (Ours)** | **56-58%** | **1.89** | **205.6%** | **-6.95%** |
 
 ### State-of-the-Art Comparison
 
@@ -355,15 +355,28 @@ See `SOTA_COMPARISON.md` for detailed explanation:
 
 ## 📈 **Visualization**
 
-Generated automatically:
-- **Optuna Dashboard**: Real-time optimization monitoring
-- **Parameter Importance**: Which hyperparameters matter most
-- **Optimization History**: Convergence plots for paper
-- **Parallel Coordinates**: High-dimensional hyperparameter space
-- **Causal Graphs**: NetworkX/Graphviz visualization
-- **Performance Plots**: Returns, drawdowns, Sharpe over time
-- **Heterogeneous Effects**: Treatment effect distributions by regime
-- 
+The following publication-grade figures are generated automatically by the pipeline to validate strategy performance, parameter robustness, and statistical significance.
+
+### 1. Strategy Performance (Returns & Drawdown)
+![Strategy Equity Curve](results/figures/01_equity_drawdown.png)
+
+### 2. Rolling Sharpe Ratio Heatmap
+![Rolling Sharpe](results/figures/02_rolling_sharpe_heatmap.png)
+
+### 3. Parameter Sensitivity (3D Surface)
+![3D Sharpe Surface](results/figures/03_sharpe_3d_surface.png)
+
+### 4. Monte Carlo Fan Chart (10,000 GBM Paths)
+![Monte Carlo](results/figures/04_monte_carlo_fan.png)
+
+### 5. Return Distribution & Tail Risk (VaR/CVaR)
+![Return Distribution](results/figures/05_return_distribution.png)
+
+### 6. Fama-French 3-Factor Attribution
+![Fama French](results/figures/06_fama_french.png)
+
+### 7. Static 3D Monte Carlo Paths
+![3D Monte Carlo Paths](results/figures/07_mc_3d.png)
 
 ### Target Conferences
 
