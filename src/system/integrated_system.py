@@ -20,6 +20,9 @@ from src.models.uncertainty_quantification import UncertaintyQuantification
 from src.models.contextual_bandit import ContextualBandit
 from src.system.backtesting import BacktestingEngine
 from src.system.monitoring import SystemMonitor
+from src.system.monte_carlo import MonteCarloEngine
+from src.models.regime_detection import RegimeDetector
+from src.utils.statistical_tests import run_all_tests as run_stat_tests
 
 logger = logging.getLogger(__name__)
 
@@ -48,6 +51,10 @@ class IntegratedCausalTradingSystem:
         self.contextual_bandit = ContextualBandit(config.get('contextual_bandit', {}))
         self.backtesting_engine = BacktestingEngine(config.get('backtesting', {}))
         self.system_monitor = SystemMonitor(config.get('monitoring', {}))
+        self.monte_carlo = MonteCarloEngine(
+            n_simulations=config.get('monte_carlo', {}).get('n_simulations', 10000))
+        self.regime_detector = RegimeDetector(
+            n_regimes=config.get('regime_detection', {}).get('n_regimes', 3))
         
         # System state
         self.current_data = None
@@ -470,3 +477,35 @@ class IntegratedCausalTradingSystem:
         except Exception as e:
             logger.error(f"Complete pipeline execution failed: {e}")
             raise
+
+    def run_full_validation(self, returns: pd.Series, equity: pd.Series,
+                            sharpe: float, n_trials: int = 1) -> Dict:
+        """
+        Run complete validation: MC simulation + statistical tests.
+
+        Args:
+            returns: daily return series from backtest
+            equity: equity curve from backtest
+            sharpe: observed Sharpe ratio
+            n_trials: number of strategy variants tested
+
+        Returns:
+            Dict with mc_results, stat_tests, regime_analysis.
+        """
+        logger.info("Running full validation suite...")
+
+        # Monte Carlo
+        mc_results = self.monte_carlo.run_full_simulation(returns, equity, sharpe)
+
+        # Statistical tests
+        stat_tests = run_stat_tests(returns, sharpe, n_trials=n_trials)
+
+        # Regime detection
+        vol = returns.rolling(20).std()
+        regime_results = self.regime_detector.fit(returns.dropna(), vol.dropna())
+
+        return {
+            'monte_carlo': mc_results,
+            'statistical_tests': stat_tests,
+            'regime_analysis': regime_results,
+        }
